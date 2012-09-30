@@ -1,4 +1,4 @@
-﻿@model CzechLearning.Models.Word
+﻿@model CzechLearning.Models.WordTest
 
 @{
     ViewBag.Title = "Index";
@@ -27,7 +27,7 @@
     @Html.Partial("CzechKeys")
 </p>
 <p>
-    @Html.ActionLink("Test", "Test")
+    @Html.ActionLink("Test", "CheckWord", Model)
     @Html.ActionLink("Help", "Help")
     @Html.ActionLink("Next >>", "Index")
 </p>

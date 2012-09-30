@@ -7,14 +7,21 @@ using System.Web.Mvc;
 
 namespace CzechLearning.Controllers
 {
+    /// <summary>
+    /// Allows the user to test his knowledge by presenting an English word and asking for the translation.
+    /// 
+    /// If the translation is wrong, an error will be presented to the user
+    /// </summary>
     public class TestController : Controller
     {
 
         private CzechLearningContext db = new CzechLearningContext();
 
         //
+        // Presents the test of a word at random
+        //
         // GET: /Test/
-
+        //
         public ActionResult Index()
         {
 
@@ -22,10 +29,18 @@ namespace CzechLearning.Controllers
 
             IList <Word> words = db.Words.ToList ();
 
-            var Word = words.ElementAt(rand.Next(words.Count));
+            var word = words.ElementAt(rand.Next(words.Count));
 
-            return View(Word);
+            return View(new WordTest (word));
         }
 
+
+        public ActionResult CheckWord(WordTest word)
+        {
+            if (ModelState.IsValid)
+                return View("Index");
+
+            return View("Index", word);
+        }
     }
 }
