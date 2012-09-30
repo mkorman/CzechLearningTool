@@ -1,0 +1,29 @@
+﻿@model CzechLearning.Models.Word
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Word</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.English)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.English)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Czech)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Czech)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.WordId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

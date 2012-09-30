@@ -1,0 +1,12 @@
+﻿@{
+    char[] CzechCharacters = { 'á', 'č', 'ď', 'é', 'ě', 'í', 'ň', 'ó', 'ř', 'š', 'ť', 'ů', 'ú', 'ý', 'ž', };
+}
+
+<script type="text/javascript" src="@Url.Content("/Scripts/CharInput.js")"></script>
+
+<div id="buttons">
+    @foreach (char c in CzechCharacters)
+    {
+        <button class="KeyboardButton" type="button" OnClick="addChar ('@c', 'Czech')">@c</button>
+    }
+</div>

@@ -1,0 +1,50 @@
+﻿@model CzechLearning.Models.Word
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Word</legend>
+
+        @Html.HiddenFor(model => model.WordId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.English)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.English)
+            @Html.ValidationMessageFor(model => model.English)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Czech)
+        </div>
+        <div class="editor-field" id="czech-input">
+            @Html.EditorFor(model => model.Czech)
+            @Html.ValidationMessageFor(model => model.Czech)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+@Html.Partial("CzechKeys")
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
