@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Czech Learing Tool";
 }
 @section featured {
     <section class="featured">
@@ -8,24 +8,19 @@
                 <h1>@ViewBag.Title.</h1>
                 <h2>@ViewBag.Message</h2>
             </hgroup>
-            <p>
-                To learn more about ASP.NET MVC visit
-                <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
-                The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET MVC.
-                If you have any questions about ASP.NET MVC visit
-                <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.
-            </p>
         </div>
     </section>
 }
 <h3>We suggest the following:</h3>
 <ol class="round">
     <li class="one">
-        @Html.ActionLink("View/Edit words", "Index", "Word")</li>
+        <h5>View dictionary</h5>
+        You can view and edit English to Czech translations @Html.ActionLink("here", "Index", "Word")<br />
     </li>
 
     <li class="two">
-        @Html.ActionLink("Test your knowledge", "Index", "Test")</li>
+        <h5>Test your knowledge</h5>
+        You can be quizzed on words @Html.ActionLink("here", "Index", "Quiz")<br />
     </li>
 
     <li class="three">

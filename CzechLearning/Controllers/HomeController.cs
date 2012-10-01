@@ -10,7 +10,7 @@ namespace CzechLearning.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Welcome to the Czech learning tool. This web should help you improve your Czech vocabulary.";
+            ViewBag.Message = "Welcome! This web should help you improve your Czech vocabulary.";
 
             return View();
         }

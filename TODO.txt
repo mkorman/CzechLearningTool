@@ -7,3 +7,6 @@
 - Change styling
 - Fix HTML
 - Use unobtrusive javascript (move to a region so they are loaded in the HTML header)
+- Use Czech Culture when comparing words
+	- case-insenstive comparison
+

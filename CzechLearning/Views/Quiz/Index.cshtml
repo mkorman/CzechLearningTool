@@ -1,0 +1,33 @@
+﻿@model CzechLearning.Models.WordTest
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Word test</h2>
+
+
+<fieldset>
+    
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.English)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.English)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Czech)
+    </div>
+    <div class="display-field">
+        <input id ="Czech"/>
+    </div>
+</fieldset>
+<p>
+    @Html.Partial("CzechKeys")
+</p>
+<p>
+    @Html.ActionLink("Test", "CheckWord", Model)
+    @Html.ActionLink("Help", "Help")
+    @Html.ActionLink("Next >>", "Index")
+</p>
