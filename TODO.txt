@@ -1,0 +1,9 @@
+- Rename "Test" (controller, views, etc) to "Quiz"
+- Add Quiz OK/fail via AJAX call
+- Add Quiz Hint feature
+- Add authentication (username/password)
+- Research if there is a more efficient way to store words in memory 
+- Add shortcuts for the Quiz section (space bar for test/next)
+- Change styling
+- Fix HTML
+- Use unobtrusive javascript (move to a region so they are loaded in the HTML header)
