@@ -9,7 +9,7 @@ namespace CzechLearning.Tests.Models
     [TestClass]
     public class DataContextTest
     {
-        //[TestMethod]
+        [TestMethod]
         public void TestDataContextCreation()
         {
             // Arrange
