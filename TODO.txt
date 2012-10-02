@@ -4,11 +4,13 @@
 - Add Quiz OK/fail via AJAX call
 - Add Quiz Hint feature
 - Add authentication (username/password)
-- Research if there is a more efficient way to store words in memory 
-- Add shortcuts for the Quiz section (space bar for test/next)
-- Change styling
+- Research if there is a more efficient way to store a word dictionary in memory 
+- Add shortcuts to the Quiz views (space bar for test/next)
+- Change CSS Styles
 - Improve home page
 - Use unobtrusive javascript (move to a region so they are loaded in the HTML header)
 - Use Czech Culture when comparing words
 	- case-insenstive comparison
+- Improve unit tests
+- Inject DB context into the controllers at startup (instead of them imperatively calling one)
 

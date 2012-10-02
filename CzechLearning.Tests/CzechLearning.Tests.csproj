@@ -97,7 +97,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\WordControllerTest.cs" />
     <Compile Include="Models\DataContextTest.cs" />
+    <Compile Include="Models\WordQuizTest.cs" />
     <Compile Include="Models\WordTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />

@@ -142,6 +142,7 @@ D:\GitHub\CzechLearningTool\CzechLearning\bin\DotNetOpenAuth.OAuth.Consumer.xml
 D:\GitHub\CzechLearningTool\CzechLearning\bin\DotNetOpenAuth.OAuth.xml
 D:\GitHub\CzechLearningTool\CzechLearning\bin\DotNetOpenAuth.OpenId.xml
 D:\GitHub\CzechLearningTool\CzechLearning\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
-D:\GitHub\CzechLearningTool\CzechLearning\obj\Debug\CzechLearning.csprojResolveAssemblyReference.cache
 D:\GitHub\CzechLearningTool\CzechLearning\obj\Debug\CzechLearning.dll
 D:\GitHub\CzechLearningTool\CzechLearning\obj\Debug\CzechLearning.pdb
+D:\GitHub\CzechLearningTool\CzechLearning\bin\CzechLearning.dll.CodeAnalysisLog.xml
+D:\GitHub\CzechLearningTool\CzechLearning\bin\CzechLearning.dll.lastcodeanalysissucceeded
