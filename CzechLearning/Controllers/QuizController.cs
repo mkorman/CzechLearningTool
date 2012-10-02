@@ -31,11 +31,11 @@ namespace CzechLearning.Controllers
 
             var word = words.ElementAt(rand.Next(words.Count));
 
-            return View(new WordTest (word));
+            return View(new WordQuiz (word));
         }
 
 
-        public ActionResult CheckWord(WordTest word)
+        public ActionResult CheckWord(WordQuiz word)
         {
             if (ModelState.IsValid)
                 return View("Index");
