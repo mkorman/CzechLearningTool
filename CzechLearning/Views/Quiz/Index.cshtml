@@ -1,4 +1,4 @@
-﻿@model CzechLearning.Models.WordTest
+﻿@model CzechLearning.Models.WordQuiz
 
 @{
     ViewBag.Title = "Index";
@@ -20,7 +20,8 @@
          @Html.DisplayNameFor(model => model.Czech)
     </div>
     <div class="display-field">
-        <input id ="Czech"/>
+        <input class="text-box single-line" data-val="true" data-val-required="The userTranslation field is required." id="Czech" name="userTranslation" value="" type="text">
+        <!--@Html.EditorFor(model => model.userTranslation, new { id = "Czech" })-->
     </div>
 </fieldset>
 <p>
