@@ -144,8 +144,6 @@ D:\GitHub\CzechLearningTool\CzechLearning\bin\DotNetOpenAuth.OpenId.xml
 D:\GitHub\CzechLearningTool\CzechLearning\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
 D:\GitHub\CzechLearningTool\CzechLearning\obj\Debug\CzechLearning.dll
 D:\GitHub\CzechLearningTool\CzechLearning\obj\Debug\CzechLearning.pdb
-D:\GitHub\CzechLearningTool\CzechLearning\bin\CzechLearning.dll.CodeAnalysisLog.xml
-D:\GitHub\CzechLearningTool\CzechLearning\bin\CzechLearning.dll.lastcodeanalysissucceeded
 D:\DATA\Visual Studio 2012\Projects\CzechLearningTool\CzechLearning\bin\CzechLearning.dll
 D:\DATA\Visual Studio 2012\Projects\CzechLearningTool\CzechLearning\bin\CzechLearning.pdb
 D:\DATA\Visual Studio 2012\Projects\CzechLearningTool\CzechLearning\bin\Antlr3.Runtime.dll
@@ -195,3 +193,4 @@ D:\DATA\Visual Studio 2012\Projects\CzechLearningTool\CzechLearning\bin\DotNetOp
 D:\DATA\Visual Studio 2012\Projects\CzechLearningTool\CzechLearning\obj\Debug\CzechLearning.csprojResolveAssemblyReference.cache
 D:\DATA\Visual Studio 2012\Projects\CzechLearningTool\CzechLearning\obj\Debug\CzechLearning.dll
 D:\DATA\Visual Studio 2012\Projects\CzechLearningTool\CzechLearning\obj\Debug\CzechLearning.pdb
+D:\GitHub\CzechLearningTool\CzechLearning\obj\Debug\CzechLearning.csprojResolveAssemblyReference.cache

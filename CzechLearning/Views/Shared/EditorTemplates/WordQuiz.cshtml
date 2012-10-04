@@ -1,0 +1,42 @@
+﻿@model CzechLearning.Models.WordQuiz
+
+@***************************************
+         Editor for WordQuiz class
+*****************************************@
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Guess a word...</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.English)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.English)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.userTranslation)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.userTranslation)
+            @Html.ValidationMessageFor(model => model.userTranslation)
+            @{
+                var dic = new ViewDataDictionary ();
+                dic.Add ("id", "userTranslation");
+            }
+            @Html.Partial("CzechKeys", dic)
+        </div>
+        <p>
+            <input type="submit" value="Test" />
+        </p>
+    </fieldset>
+}
+
+
+

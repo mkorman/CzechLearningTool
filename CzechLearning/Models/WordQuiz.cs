@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 
@@ -13,10 +15,11 @@ namespace CzechLearning.Models
     /// </summary>
     public class WordQuiz :  IValidatableObject
     {
-
+        protected static CultureInfo myCulture = CultureInfo.CreateSpecificCulture ("cs-CZ");
         protected readonly Word word;
 
         [Required]
+        [DisplayName("Enter your translation:")]
         public String userTranslation {get; set;}
         public String English { get { return word.English; } set { word.English = value; } }
         public String Czech { get { return word.Czech; } set { word.Czech = value; } }
@@ -35,9 +38,9 @@ namespace CzechLearning.Models
 
         public IEnumerable<ValidationResult> Validate(ValidationContext context)
         {
-            // Will validate if the user successfully translated the word into Czech
+            // Will validate if the user successfully guessed the Czech translation
 
-            if (!userTranslation.Equals(Czech))
+            if (String.Compare (userTranslation,Czech,true, myCulture) != 0)
             {
                 yield return new ValidationResult("Wrong translation", new [] {"userTranslation"});
             }

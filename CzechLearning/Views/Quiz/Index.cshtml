@@ -4,29 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Word test</h2>
-
-
-<fieldset>
+<h2>Word quiz</h2>
     
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.English)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.English)
-    </div>
+   @Html.EditorFor(model => model)
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Czech)
-    </div>
-    <div class="display-field">
-        <input class="text-box single-line" data-val="true" data-val-required="The userTranslation field is required." id="Czech" name="userTranslation" value="" type="text">
-        <!--@Html.EditorFor(model => model.userTranslation, new { id = "Czech" })-->
-    </div>
-</fieldset>
-<p>
-    @Html.Partial("CzechKeys")
-</p>
 <p>
     @Html.ActionLink("Test", "CheckWord", Model)
     @Html.ActionLink("Help", "Help")

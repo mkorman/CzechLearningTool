@@ -1,12 +1,20 @@
 ﻿@{
     char[] CzechCharacters = { 'á', 'č', 'ď', 'é', 'ě', 'í', 'ň', 'ó', 'ř', 'š', 'ť', 'ů', 'ú', 'ý', 'ž', };
+    
+    // Retrieve what control are we binding the keys to
+    // If no id is supplied, then we default to 'Czech'
+    string controlId = ViewBag.id;
+    if (controlId == null)
+    {
+        controlId = "Czech";
+    }
 }
 
 <script type="text/javascript" src="@Url.Content("/Scripts/CharInput.js")"></script>
 
 <div id="buttons">
-    @foreach (char c in CzechCharacters)
+    @foreach (char myChar in CzechCharacters)
     {
-        <button class="KeyboardButton" type="button" OnClick="addChar ('@c', 'Czech')">@c</button>
+        <button class="KeyboardButton" type="button" OnClick="addChar ('@myChar', '@controlId')">@myChar</button>
     }
 </div>

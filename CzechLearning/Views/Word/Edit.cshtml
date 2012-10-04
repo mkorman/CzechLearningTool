@@ -25,7 +25,7 @@
         <div class="editor-label">
             @Html.LabelFor(model => model.Czech)
         </div>
-        <div class="editor-field" id="czech-input">
+        <div class="editor-field">
             @Html.EditorFor(model => model.Czech)
             @Html.ValidationMessageFor(model => model.Czech)
         </div>
@@ -36,7 +36,11 @@
     </fieldset>
 }
 
-@Html.Partial("CzechKeys")
+@{
+    var dic = new ViewDataDictionary ();
+    dic.Add ("id", "Czech");
+    }
+    @Html.Partial("CzechKeys", dic)
 
 <div>
     @Html.ActionLink("Back to List", "Index")
