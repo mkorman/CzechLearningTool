@@ -26,15 +26,16 @@
         <div class="editor-field">
             @Html.EditorFor(model => model.userTranslation)
             @Html.ValidationMessageFor(model => model.userTranslation)
+            <span id="resultplaceholder"></span>
             @{
                 var dic = new ViewDataDictionary ();
                 dic.Add ("id", "userTranslation");
             }
             @Html.Partial("CzechKeys", dic)
         </div>
-        <p>
+        <!--p>
             <input type="submit" value="Test" />
-        </p>
+        </p-->
     </fieldset>
 }
 

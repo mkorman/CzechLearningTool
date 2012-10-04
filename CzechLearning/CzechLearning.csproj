@@ -233,6 +233,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Images\check.png" />
+    <Content Include="Images\error.png" />
     <Content Include="Scripts\CharInput.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -295,6 +297,7 @@
     <Content Include="Views\Shared\CzechKeys.cshtml" />
     <Content Include="Views\Quiz\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\WordQuiz.cshtml" />
+    <Content Include="Views\Shared\SuccessPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

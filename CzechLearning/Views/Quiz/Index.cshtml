@@ -3,13 +3,23 @@
 @{
     ViewBag.Title = "Index";
 }
+<script src="@Url.Content("~/Scripts/jquery-1.7.1.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"></script>
 
 <h2>Word quiz</h2>
     
    @Html.EditorFor(model => model)
 
 <p>
-    @Html.ActionLink("Test", "CheckWord", Model)
+   @Ajax.ActionLink("Test Me", 
+        "CheckWord",
+        Model,
+        new AjaxOptions { 
+            UpdateTargetId="resultplaceholder",
+            InsertionMode=InsertionMode.Replace,
+            HttpMethod="GET"
+        })
+
     @Html.ActionLink("Help", "Help")
     @Html.ActionLink("Next >>", "Index")
 </p>

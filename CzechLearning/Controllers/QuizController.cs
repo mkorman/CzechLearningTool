@@ -37,10 +37,7 @@ namespace CzechLearning.Controllers
 
         public ActionResult CheckWord(WordQuiz word)
         {
-            if (ModelState.IsValid)
-                return View("Index");
-
-            return View("Index", word);
+            return PartialView ("SuccessPartial", ModelState.IsValid);
         }
     }
 }
