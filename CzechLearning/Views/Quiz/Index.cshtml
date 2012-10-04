@@ -17,7 +17,8 @@
         new AjaxOptions { 
             UpdateTargetId="resultplaceholder",
             InsertionMode=InsertionMode.Replace,
-            HttpMethod="GET"
+            HttpMethod="POST",
+            LoadingElementDuration=3000
         })
 
     @Html.ActionLink("Help", "Help")

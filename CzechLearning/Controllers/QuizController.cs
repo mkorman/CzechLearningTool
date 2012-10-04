@@ -34,7 +34,19 @@ namespace CzechLearning.Controllers
             return View(new WordQuiz (word));
         }
 
+        //
+        // Presents the test of a word at random
+        // (just a test to test data binding)
+        //
+        // POST: /Test/
+        //
+        [HttpPost]
+        public ActionResult Index(WordQuiz userWord)
+        {
+            return View(userWord);
+        }
 
+        [HttpPost]
         public ActionResult CheckWord(WordQuiz word)
         {
             return PartialView ("SuccessPartial", ModelState.IsValid);

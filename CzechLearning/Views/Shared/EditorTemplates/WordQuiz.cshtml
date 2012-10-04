@@ -20,6 +20,13 @@
             @Html.DisplayFor(model => model.English)
         </div>
 
+        <!--div class="editor-label">
+            @Html.LabelFor(model => model.Czech)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.Czech)
+        </div-->
+
         <div class="editor-label">
             @Html.LabelFor(model => model.userTranslation)
         </div>
@@ -27,15 +34,15 @@
             @Html.EditorFor(model => model.userTranslation)
             @Html.ValidationMessageFor(model => model.userTranslation)
             <span id="resultplaceholder"></span>
+        </div>
             @{
                 var dic = new ViewDataDictionary ();
                 dic.Add ("id", "userTranslation");
             }
             @Html.Partial("CzechKeys", dic)
-        </div>
-        <!--p>
-            <input type="submit" value="Test" />
-        </p-->
+        <p>
+            <input type="submit" value="Submit" />
+        </p>
     </fieldset>
 }
 

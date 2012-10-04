@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace CzechLearning.Models
 {
@@ -21,6 +22,7 @@ namespace CzechLearning.Models
         [Required]
         [DisplayName("Enter your translation:")]
         public String userTranslation {get; set;}
+        [HiddenInput]
         public String English { get { return word.English; } set { word.English = value; } }
         public String Czech { get { return word.Czech; } set { word.Czech = value; } }
 
