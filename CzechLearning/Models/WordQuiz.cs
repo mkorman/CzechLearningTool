@@ -20,7 +20,7 @@ namespace CzechLearning.Models
         protected readonly Word word;
 
         [Required]
-        [DisplayName("Enter your translation:")]
+        [DisplayName("Translation")]
         public String userTranslation {get; set;}
         [HiddenInput]
         public String English { get { return word.English; } set { word.English = value; } }

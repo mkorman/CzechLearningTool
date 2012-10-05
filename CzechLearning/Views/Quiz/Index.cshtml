@@ -1,15 +1,24 @@
 ﻿@model CzechLearning.Models.WordQuiz
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Quiz!";
 }
 <script src="~/Scripts/jquery-1.7.1.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="~/Scripts/jquery.hotkeys.js"></script>
+<script>
+    $(document).bind('keydown', 'space', getNext);
+
+    function getNext(evt) {
+        // We reload the page, knowing that we'll get a new word
+        location.reload();
+        return false;
+    }
+</script>
 
 <h2>Word quiz</h2>
-    
 
 
 @using (Ajax.BeginForm("CheckWord",
@@ -52,11 +61,11 @@
         <p>
             <input type="submit" value="Test"/>
             <button onclick ="location.href='@Url.Action("Index")'">Next >></button>
+            <button>Hint</button>
         </p>
     </fieldset>
 }
 
 <p>
     <!--@Html.ActionLink("Help", "Help")-->
-    @Html.ActionLink("Next >>", "Index")
 </p>

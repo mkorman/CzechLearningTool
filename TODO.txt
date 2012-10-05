@@ -2,14 +2,14 @@
 - Text input buttons should insert at the caret's position (DONE)
 - Use Czech Culture when comparing words (DONE)
 	- case-insenstive comparison (DONE)
+- Add Quiz OK/fail via AJAX call (DONE)
+- Add shortcuts to the Quiz views (space bar for test/next) (DONE)
 
 
-- Text input buttons should replace selected text, if any, with the button's value
-- Add Quiz OK/fail via AJAX call
+- Javascript: text input buttons should replace selected text, if any, with the button's value
 - Add Quiz Hint feature
 - Add authentication (username/password)
 - Research if there is a more efficient way to store a word dictionary in memory 
-- Add shortcuts to the Quiz views (space bar for test/next)
 - Change CSS Styles
 - Improve home page
 - Use unobtrusive javascript (move to a region so they are loaded in the HTML header)
