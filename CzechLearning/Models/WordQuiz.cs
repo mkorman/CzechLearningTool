@@ -22,8 +22,8 @@ namespace CzechLearning.Models
         [Required]
         [DisplayName("Translation")]
         public String userTranslation {get; set;}
-        [HiddenInput]
         public String English { get { return word.English; } set { word.English = value; } }
+        [HiddenInput]
         public String Czech { get { return word.Czech; } set { word.Czech = value; } }
 
         public WordQuiz()
