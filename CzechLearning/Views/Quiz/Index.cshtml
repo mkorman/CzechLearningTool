@@ -22,12 +22,13 @@
 
 
 @using (Ajax.BeginForm("CheckWord",
+    Model,
     new AjaxOptions
     {
         UpdateTargetId = "resultplaceholder",
         InsertionMode = InsertionMode.Replace,
         HttpMethod = "POST",
-    }))
+    }, new { autocomplete = "off" }))
 {
     @Html.ValidationSummary(true)
 
@@ -54,8 +55,8 @@
             <span id="resultplaceholder"></span>
         </div>
             @{
-                var dic = new ViewDataDictionary ();
-                dic.Add ("id", "userTranslation");
+    var dic = new ViewDataDictionary();
+    dic.Add("id", "userTranslation");
             }
             @Html.Partial("CzechKeys", dic)
         <p>

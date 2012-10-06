@@ -8,6 +8,7 @@
 - CharInput Javascript: text input buttons should replace selected text, if any, with the button's value (DONE)
 - CharInput Javascript: fix when caret is at position 0. (DONE)
 - Add a link to 'Quiz' from the Dictionary editing (DONE)
+- Disable browser autocomplete! (DONE)
 
 
 - Add Quiz Hint feature
@@ -18,7 +19,6 @@
 - Improve unit tests
 - Inject DB context into the controllers at startup (instead of them imperatively calling one)
 - Word dictionary validation: ensure that words are not repeated (Unique key in 'English' field)
-- Disable browser autocomplete!
 - Fix "error" icon so that it's no taller than the input box. Same height as the "ok" icon should be.
 - Change CSS Styles
 - Improve home page
