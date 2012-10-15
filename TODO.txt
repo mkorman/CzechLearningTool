@@ -10,9 +10,11 @@
 - Add a link to 'Quiz' from the Dictionary editing (DONE)
 - Disable browser autocomplete! (DONE)
 
-
+- Dictionary create: add a "Create and create a new one" button at the bottom of the form
+- Dictionary create: Disable autocomplete
 - Add Quiz Hint feature
 - Quiz: on get next, blank out the translation field
+- Quiz: on type, hide the ok/fail icon
 - Add authentication (username/password)
 - Research if there is a more efficient way to store a word dictionary in memory 
 - Use unobtrusive javascript (move to a region so they are loaded in the HTML header)
