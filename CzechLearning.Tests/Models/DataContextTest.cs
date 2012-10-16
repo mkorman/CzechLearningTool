@@ -10,7 +10,7 @@ namespace CzechLearning.Tests.Models
     public class DataContextTest
     {
         [TestMethod]
-        public void TestDataContextCreation()
+        public void Model_DataContext_Creation()
         {
             // Arrange
             var myDataContext = new CzechLearningContext();

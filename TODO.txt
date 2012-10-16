@@ -9,10 +9,11 @@
 - CharInput Javascript: fix when caret is at position 0. (DONE)
 - Add a link to 'Quiz' from the Dictionary editing (DONE)
 - Disable browser autocomplete! (DONE)
+- Add Quiz Hint feature (DONE)
+
 
 - Dictionary create: add a "Create and create a new one" button at the bottom of the form
 - Dictionary create: Disable autocomplete
-- Add Quiz Hint feature
 - Quiz: on get next, blank out the translation field
 - Quiz: on type, hide the ok/fail icon
 - Add authentication (username/password)

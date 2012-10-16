@@ -1,21 +1,44 @@
 ﻿@model CzechLearning.Models.WordQuiz
+@using CzechLearning;
 
 @{
     ViewBag.Title = "Quiz!";
 }
 <script src="~/Scripts/jquery-1.7.1.min.js"></script>
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<!--script src="~/Scripts/jquery.validate.min.js"></!--script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script-->
 <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
 <script src="~/Scripts/jquery.hotkeys.js"></script>
 <script>
+    // Bind space to 'next' action
     $(document).bind('keydown', 'space', getNext);
 
     function getNext(evt) {
+        evt.preventDefault();
         // We reload the page, knowing that we'll get a new word
         location.reload();
         return false;
     }
+</script>
+<script>
+    // Hint binding
+
+    $(function () {
+        // Hook the btnHint get JSON data for Hint
+        $('#btnHint').click(function (event) {
+            event.preventDefault();
+            // Get the form
+            var form = $('form');
+
+            $.getJSON("@Url.Action("Hint")", form.serialize(), function (data) {
+                
+                // Update relevant form fields
+                $("#userTranslation").val(data.userTranslation);
+                $("#hintLevel").val(data.hintLevel);
+            });
+        });
+    }
+)
 </script>
 
 <h2>Word quiz</h2>
@@ -45,7 +68,9 @@
         <div class="editor-field">
             @Html.HiddenFor(model => model.Czech)
         </div>
-
+         <div class="editor-field">
+            @Html.HiddenFor(model => model.hintLevel)
+        </div>
         <div class="editor-label">
             @Html.LabelFor(model => model.userTranslation)
         </div>
@@ -54,19 +79,17 @@
             @Html.ValidationMessageFor(model => model.userTranslation)
             <span id="resultplaceholder"></span>
         </div>
-            @{
-    var dic = new ViewDataDictionary();
-    dic.Add("id", "userTranslation");
-            }
-            @Html.Partial("CzechKeys", dic)
+        @{
+            var dict = new ViewDataDictionary();
+            dict.Add("id", "userTranslation");
+        }
+        @Html.Partial("CzechKeys",dict)
         <p>
-            <input type="submit" value="Test"/>
+            <input type="submit" name="CheckWord" value="Test"/>
+            <button id="btnHint" name="Hint" value="Hint">Hint</button>
             <button onclick ="location.href='@Url.Action("Index")'">Next >></button>
-            <button>Hint</button>
         </p>
     </fieldset>
 }
 
-<p>
-    <!--@Html.ActionLink("Help", "Help")-->
-</p>
+

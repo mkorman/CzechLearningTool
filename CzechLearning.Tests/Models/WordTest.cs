@@ -9,7 +9,7 @@ namespace CzechLearning.Tests.Models
     {
         [TestMethod]
         // Test that we got a default constructor
-        public void TestWordCreation()
+        public void Model_Word_Creation()
         {
             // Arrange
             var word = new Word();
@@ -20,7 +20,7 @@ namespace CzechLearning.Tests.Models
 
         [TestMethod]
         // Test that we got two well-known properties
-        public void TestWordProperties()
+        public void Model_Word_Properties()
         {
             // Arrange
             var word = new Word();

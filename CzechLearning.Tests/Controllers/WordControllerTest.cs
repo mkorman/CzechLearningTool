@@ -11,7 +11,7 @@ namespace CzechLearning.Tests.Controllers
     public class WordControllerTest
     {
         [TestMethod]
-        public void TestWordControllerIndex()
+        public void Controller_Word_Index()
         {
             // Arrange
             var controller = new WordController();

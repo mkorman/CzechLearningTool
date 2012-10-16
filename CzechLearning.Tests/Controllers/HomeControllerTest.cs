@@ -13,7 +13,7 @@ namespace CzechLearning.Tests.Controllers
     public class HomeControllerTest
     {
         [TestMethod]
-        public void Index()
+        public void Controller_Home_Index()
         {
             // Arrange
             HomeController controller = new HomeController();
@@ -26,7 +26,7 @@ namespace CzechLearning.Tests.Controllers
         }
 
         [TestMethod]
-        public void About()
+        public void Controller_Home_About()
         {
             // Arrange
             HomeController controller = new HomeController();
@@ -39,7 +39,7 @@ namespace CzechLearning.Tests.Controllers
         }
 
         [TestMethod]
-        public void Contact()
+        public void Controller_Home_Contact()
         {
             // Arrange
             HomeController controller = new HomeController();
