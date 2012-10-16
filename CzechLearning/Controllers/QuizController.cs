@@ -56,11 +56,13 @@ namespace CzechLearning.Controllers
         /// </summary>
         /// <param name="userWord"></param>
         /// <returns></returns>
+        /*
         [HttpPost]
         public ActionResult Index(WordQuiz userWord)
         {
             return View(userWord);
         }
+         */
 
         /// <summary>
         /// Returns a partial view which represents whether the word validated OK or not
