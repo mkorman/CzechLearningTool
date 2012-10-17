@@ -12,6 +12,14 @@
 <script>
     // Bind space to 'next' action
     $(document).bind('keydown', 'space', getNext);
+    // Bind 'h' to 'gethint' action
+    $(document).bind('keydown', 'h', getHint);
+    // Clear user error icon on user keypress
+    $(function () {
+        $('#userTranslation').keydown(function () {
+            $('#resultplaceholder').empty();
+        })
+    });
 
     function getNext(evt) {
         evt.preventDefault();
@@ -19,26 +27,26 @@
         location.reload();
         return false;
     }
-</script>
-<script>
-    // Hint binding
+    
+    // AJAX for Hint
+    function getHint (event) {
+        event.preventDefault();
+        // Get the form
+        var form = $('form');
 
-    $(function () {
-        // Hook the btnHint get JSON data for Hint
-        $('#btnHint').click(function (event) {
-            event.preventDefault();
-            // Get the form
-            var form = $('form');
-
-            $.getJSON("@Url.Action("Hint")", form.serialize(), function (data) {
+        // Call hint and update form
+        $.getJSON("@Url.Action("Hint")", form.serialize(), function (data) {
                 
                 // Update relevant form fields
                 $("#userTranslation").val(data.userTranslation);
                 $("#hintLevel").val(data.hintLevel);
             });
-        });
-    }
-)
+        }
+
+    // Hook the btnHint get JSON data for Hint
+    $(function () {
+        $('#btnHint').click(getHint);
+    })
 </script>
 
 <h2>Word quiz</h2>
@@ -86,7 +94,7 @@
         @Html.Partial("CzechKeys",dict)
         <p>
             <input type="submit" name="CheckWord" value="Test"/>
-            <button id="btnHint" name="Hint" value="Hint">Hint</button>
+            <button id="btnHint">Hint</button>
             <button onclick ="location.href='@Url.Action("Index")'">Next >></button>
         </p>
     </fieldset>

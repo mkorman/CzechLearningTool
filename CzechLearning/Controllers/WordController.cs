@@ -46,6 +46,7 @@ namespace CzechLearning.Controllers
         // POST: /Word/Create
 
         [HttpPost]
+        [MultiButton(MatchFormKey = "Action", MatchFormValue = "Create")] 
         public ActionResult Create(Word word)
         {
             if (ModelState.IsValid)
@@ -57,6 +58,24 @@ namespace CzechLearning.Controllers
 
             return View(word);
         }
+
+        //
+        // POST: /Word/CreateMore
+
+        [HttpPost]
+        [MultiButton(MatchFormKey = "Action", MatchFormValue = "Create More")] 
+        public ActionResult CreateMore(Word word)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Words.Add(word);
+                db.SaveChanges();
+                return RedirectToAction("Create");
+            }
+
+            return View(word);
+        }
+
 
         //
         // GET: /Word/Edit/5

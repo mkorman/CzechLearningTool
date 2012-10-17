@@ -24,5 +24,39 @@ namespace CzechLearning.Tests.Controllers
             Assert.IsNotNull(result.Model);
             Assert.IsInstanceOfType (result.Model, typeof (List<Word>));
         }
+
+        [TestMethod]
+        public void Controller_Word_Details()
+        {
+            // Arrange
+            var controller = new WordController();
+
+            // Act
+            ActionResult result = controller.Details() as ActionResult;
+
+            // Assert
+            Assert.IsNotNull(result, "Expected a non null action result");
+
+            // Act
+            result = controller.Details(-1) as ActionResult;
+
+            // Assert
+            Assert.IsInstanceOfType (result, typeof (HttpNotFoundResult), "Expected Http not found on querying nonexisting word");
+        }
+
+        [TestMethod]
+        public void Controller_Word_Create()
+        {
+            // We always expect a view, allowing us to create
+
+            // Arrange
+            var controller = new WordController();
+
+            // Act
+            ViewResult result = controller.Create() as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result, "Expected a non null view result");
+        }
     }
 }

@@ -24,9 +24,10 @@ namespace CzechLearning.Controllers
         //
         public ActionResult Index()
         {
-            /*
+            
             // our DB query
             var query = from word in db.Words
+                        orderby word.WordId
                         select word;
 
             // 1st round trip to DB: get count
@@ -37,32 +38,10 @@ namespace CzechLearning.Controllers
             var randomIndex = rand.Next(count);
 
             // 2nd round trip: get a random item
-            var randomWord = query.Skip(randomIndex).First();
-            */
-
-            // ToList() approach: this is sub-optimal, as we enumerate the whole lot
-            var rand = new Random();
-            IList <Word> words = db.Words.ToList ();
-            var randomWord = words.ElementAt(rand.Next(words.Count));
+            var randomWord = query.Skip(randomIndex).First ();
             
             return View(new WordQuiz (randomWord));
         }
-
-        /// <summary>
-        /// This is a test to do the data binding
-        /// 
-        /// POST: /Test/
-        /// 
-        /// </summary>
-        /// <param name="userWord"></param>
-        /// <returns></returns>
-        /*
-        [HttpPost]
-        public ActionResult Index(WordQuiz userWord)
-        {
-            return View(userWord);
-        }
-         */
 
         /// <summary>
         /// Returns a partial view which represents whether the word validated OK or not

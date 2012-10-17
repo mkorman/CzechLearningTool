@@ -8,7 +8,9 @@ using System.Web.Mvc;
 namespace CzechLearning
 {
     
-
+    /// TODO: there's a more elegant solution here:
+    /// http://blog.maartenballiauw.be/post/2009/11/26/Supporting-multiple-submit-buttons-on-an-ASPNET-MVC-view.aspx
+    /// 
     /// <summary>
     /// This attribute is used to decorate actions in a Controller, and allows us to discriminate what controller to use
     /// depending on an attribute in the calling button.
