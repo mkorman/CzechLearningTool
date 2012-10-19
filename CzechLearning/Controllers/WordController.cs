@@ -6,12 +6,19 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CzechLearning.Models;
+using System.Data.Entity.Infrastructure;
 
 namespace CzechLearning.Controllers
 {
     public class WordController : Controller
     {
-        private CzechLearningContext db = new CzechLearningContext();
+        private CzechLearningContext db;
+
+
+        public WordController(CzechLearningContext context)
+        {
+            db = context;
+        }
 
         //
         // GET: /Word/

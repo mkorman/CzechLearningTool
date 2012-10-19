@@ -15,9 +15,9 @@
 - Fix "error" icon so that it's no taller than the input box. Same height as the "ok" icon should be. (DONE)
 - Quiz: on type, hide the ok/fail icon (DONE)
 - Dictionary create: move czech buttons above 'Create' button (DONE)
+- Dictionary create: add a "Create and create a new one" button at the bottom of the form (DONE)
 
 - Add authentication (username/password)
-- Dictionary create: add a "Create and create a new one" button at the bottom of the form
 - Quiz: on get next, avoid screen flicker (it seems to do a 'test') 
 - IoC: Inject DB context into the controllers at startup (instead of them imperatively calling one)
 - Word dictionary validation: ensure that words are not repeated (Unique key in 'English' field)
