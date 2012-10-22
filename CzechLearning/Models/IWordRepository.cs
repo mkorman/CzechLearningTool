@@ -20,3 +20,4 @@ namespace CzechLearning.Models
         DbSet Remove(Word word);
     }
 }
+

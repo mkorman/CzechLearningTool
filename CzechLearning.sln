@@ -1,9 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2012 for Web
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CzechLearning", "CzechLearning\CzechLearning.csproj", "{7A2D3A1E-A41E-4C9E-B6D5-CBCC89A408EB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CzechLearning.Tests", "CzechLearning.Tests\CzechLearning.Tests.csproj", "{A43F06CF-F467-4B03-863B-B4881C631218}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D9286623-A168-447D-B306-2447C35D21E7}"
+	ProjectSection(SolutionItems) = preProject
+		TODO.txt = TODO.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

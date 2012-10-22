@@ -1,6 +1,5 @@
 [assembly: WebActivator.PreApplicationStartMethod(typeof(CzechLearning.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivator.ApplicationShutdownMethodAttribute(typeof(CzechLearning.App_Start.NinjectWebCommon), "Stop")]
-
 namespace CzechLearning.App_Start
 {
     using System;
