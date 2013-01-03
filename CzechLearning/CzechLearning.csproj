@@ -187,10 +187,11 @@
     </Compile>
     <Compile Include="HttpParamActionAttribute.cs" />
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\IWordsContext.cs" />
+    <Compile Include="Models\IWordRepository.cs" />
     <Compile Include="Models\WordQuiz.cs" />
     <Compile Include="Models\CzechLearningContext.cs" />
     <Compile Include="Models\Word.cs" />
+    <Compile Include="Models\WordRepository.cs" />
     <Compile Include="MultiButtonAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

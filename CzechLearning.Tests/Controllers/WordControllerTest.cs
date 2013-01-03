@@ -14,7 +14,7 @@ namespace CzechLearning.Tests.Controllers
         public void Controller_Word_Index()
         {
             // Arrange
-            var controller = new WordController(new CzechLearningContext());
+            var controller = new WordController(new WordRepository());
 
             // Act
             ViewResult result = controller.Index() as ViewResult;
@@ -29,7 +29,7 @@ namespace CzechLearning.Tests.Controllers
         public void Controller_Word_Details()
         {
             // Arrange
-            var controller = new WordController(new CzechLearningContext());
+            var controller = new WordController(new WordRepository());
 
             // Act
             ActionResult result = controller.Details() as ActionResult;
@@ -50,7 +50,7 @@ namespace CzechLearning.Tests.Controllers
             // We always expect a view, allowing us to create
 
             // Arrange
-            var controller = new WordController(new CzechLearningContext());
+            var controller = new WordController(new WordRepository());
 
             // Act
             ViewResult result = controller.Create() as ViewResult;

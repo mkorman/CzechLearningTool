@@ -12,10 +12,10 @@ namespace CzechLearning.Controllers
 {
     public class WordController : Controller
     {
-        private CzechLearningContext db;
+        private IWordRepository db;
 
 
-        public WordController(CzechLearningContext context)
+        public WordController(IWordRepository context)
         {
             db = context;
         }
@@ -33,7 +33,7 @@ namespace CzechLearning.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            Word word = db.Words.Find(id);
+            Word word = db.Find(id);
             if (word == null)
             {
                 return HttpNotFound();
@@ -58,8 +58,7 @@ namespace CzechLearning.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Words.Add(word);
-                db.SaveChanges();
+                db.Create(word);
                 return RedirectToAction("Index");
             }
 
@@ -75,8 +74,7 @@ namespace CzechLearning.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Words.Add(word);
-                db.SaveChanges();
+                db.Create(word);
                 return RedirectToAction("Create");
             }
 
@@ -89,7 +87,7 @@ namespace CzechLearning.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            Word word = db.Words.Find(id);
+            Word word = db.Find(id);
             if (word == null)
             {
                 return HttpNotFound();
@@ -105,8 +103,7 @@ namespace CzechLearning.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(word).State = EntityState.Modified;
-                db.SaveChanges();
+                db.Edit(word);
                 return RedirectToAction("Index");
             }
             return View(word);
@@ -117,7 +114,7 @@ namespace CzechLearning.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            Word word = db.Words.Find(id);
+            Word word = db.Find(id);
             if (word == null)
             {
                 return HttpNotFound();
@@ -131,9 +128,7 @@ namespace CzechLearning.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            Word word = db.Words.Find(id);
-            db.Words.Remove(word);
-            db.SaveChanges();
+            db.Remove(id);
             return RedirectToAction("Index");
         }
 

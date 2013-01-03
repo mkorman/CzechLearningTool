@@ -3,7 +3,7 @@ using System.Data.Entity.Infrastructure;
 
 namespace CzechLearning.Models
 {
-    public class CzechLearningContext : DbContext, IWordsContext
+    public class CzechLearningContext : DbContext
     {
         // You can add custom code to this file. Changes will not be overwritten.
         // 
@@ -20,8 +20,5 @@ namespace CzechLearning.Models
 
         public DbSet<Word> Words { get; set; }
 
-        public DbEntityEntry<Word> Entry(Word word) {
-            return base.Entry(word);
-        }
     }
 }

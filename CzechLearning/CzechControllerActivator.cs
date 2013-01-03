@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Started implementing IoC and DI
 ﻿using CzechLearning.Controllers;
 using CzechLearning.Models;
 using System;
@@ -23,12 +26,17 @@ namespace CzechLearning
         {
             if (controllerType.Equals (typeof (WordController)))
             {
+<<<<<<< HEAD
                 return new WordController (new CzechLearningContext ());
+=======
+                return new WordController (new WordRepository());
+>>>>>>> Started implementing IoC and DI
             }
 
             return Activator.CreateInstance (controllerType) as IController;
         }
     }
+<<<<<<< HEAD
 =======
 ﻿using CzechLearning.Controllers;
 using CzechLearning.Models;
@@ -61,4 +69,6 @@ namespace CzechLearning
         }
     }
 >>>>>>> 7986f23947b753a85cf002f2b9590dd40d085722
+=======
+>>>>>>> Started implementing IoC and DI
 }

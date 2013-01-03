@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Started implementing IoC and DI
 ﻿using CzechLearning.Models;
 using System;
 using System.Collections.Generic;
@@ -14,6 +17,7 @@ namespace CzechLearning
     {
         public override void Load()
         {
+<<<<<<< HEAD
             Bind<IWordsContext>().To<CzechLearningContext>();
         }
     }
@@ -37,4 +41,9 @@ namespace CzechLearning
         }
     }
 >>>>>>> 7986f23947b753a85cf002f2b9590dd40d085722
+=======
+            Bind<IWordRepository>().To<WordRepository>();
+        }
+    }
+>>>>>>> Started implementing IoC and DI
 }
