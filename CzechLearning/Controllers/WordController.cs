@@ -14,6 +14,12 @@ namespace CzechLearning.Controllers
     {
         private IWordRepository db;
 
+        /// <summary>
+        /// TODO: remove this when DI is fully implemented
+        /// </summary>
+        public WordController() : this (new WordRepository ())
+        {
+        }
 
         public WordController(IWordRepository context)
         {
@@ -22,7 +28,6 @@ namespace CzechLearning.Controllers
 
         //
         // GET: /Word/
-
         public ActionResult Index()
         {
             return View(db.Words.OrderBy(Word => Word.English).ToList());

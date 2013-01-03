@@ -187,6 +187,7 @@
     </Compile>
     <Compile Include="HttpParamActionAttribute.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\IWordContext.cs" />
     <Compile Include="Models\IWordRepository.cs" />
     <Compile Include="Models\WordQuiz.cs" />
     <Compile Include="Models\CzechLearningContext.cs" />

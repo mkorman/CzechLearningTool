@@ -3,7 +3,7 @@ using System.Data.Entity.Infrastructure;
 
 namespace CzechLearning.Models
 {
-    public class CzechLearningContext : DbContext
+    public class CzechLearningContext : DbContext, IWordContext
     {
         // You can add custom code to this file. Changes will not be overwritten.
         // 
