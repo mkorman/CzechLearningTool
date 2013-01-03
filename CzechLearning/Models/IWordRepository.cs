@@ -37,11 +37,20 @@ using System.Threading.Tasks;
 namespace CzechLearning.Models
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     interface IWordRepository
     {
         DbSet GetAll();
 
 =======
+=======
+
+    /// <summary>
+    /// Model repository, where our Word model is stored.
+    /// 
+    /// Supports CRUD + find operations
+    /// </summary>
+>>>>>>> Committing to repo to catch up
     public interface IWordRepository : IDisposable
     {
         // Get a set of words from the database

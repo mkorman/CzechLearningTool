@@ -4,51 +4,6 @@
 @{
     ViewBag.Title = "Quiz!";
 }
-<script src="~/Scripts/jquery-1.7.1.min.js"></script>
-<!--script src="~/Scripts/jquery.validate.min.js"></!--script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script-->
-<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-<script src="~/Scripts/jquery.hotkeys.js"></script>
-<script>
-    // Bind space to 'next' action
-    $(document).bind('keydown', 'space', getNext);
-    // Bind 'h' to 'gethint' action
-    $(document).bind('keydown', 'h', getHint);
-    // Clear user error icon on user keypress
-    $(function () {
-        $('#userTranslation').keydown(function () {
-            $('#resultplaceholder').empty();
-        })
-    });
-
-    function getNext(evt) {
-        evt.preventDefault();
-        // We reload the page, knowing that we'll get a new word
-        location.reload();
-        return false;
-    }
-    
-    // AJAX for Hint
-    function getHint (event) {
-        event.preventDefault();
-        // Get the form
-        var form = $('form');
-
-        // Call hint and update form
-        $.getJSON("@Url.Action("Hint")", form.serialize(), function (data) {
-                
-                // Update relevant form fields
-                $("#userTranslation").val(data.userTranslation);
-                $("#hintLevel").val(data.hintLevel);
-            });
-        }
-
-    // Hook the btnHint get JSON data for Hint
-    $(function () {
-        $('#btnHint').click(getHint);
-    })
-</script>
-
 <h2>Word quiz</h2>
 
 
@@ -101,3 +56,49 @@
 }
 
 
+@section Scripts {
+@Scripts.Render("~/Scripts/jquery-1.7.1.min.js")
+@Scripts.Render("~/Scripts/jquery.hotkeys.js")
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script>
+    // Bind space to 'next' action
+    $(document).bind('keydown', 'space', getNext);
+    // Bind 'h' to 'gethint' action
+    $(document).bind('keydown', 'h', getHint);
+    // Clear user error icon on user keypress
+    $(function () {
+        $('#userTranslation').keydown(function () {
+            $('#resultplaceholder').empty();
+        })
+    });
+
+    function getNext(evt) {
+        evt.preventDefault();
+        // We reload the page, knowing that we'll get a new word
+        location.reload();
+        return false;
+    }
+    
+    // AJAX for Hint
+    function getHint (event) {
+        event.preventDefault();
+        // Get the form
+        var form = $('form');
+
+        // Call hint and update form
+        $.getJSON("@Url.Action("Hint")", form.serialize(), function (data) {
+                
+                // Update relevant form fields
+                $("#userTranslation").val(data.userTranslation);
+                $("#hintLevel").val(data.hintLevel);
+            });
+        }
+
+    // Hook the btnHint get JSON data for Hint
+    $(function () {
+        $('#btnHint').click(getHint);
+    })
+</script>
+}

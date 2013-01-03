@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿using CzechLearning.Controllers;
 using CzechLearning.Models;
 using System;
@@ -50,6 +51,8 @@ namespace CzechLearning
 
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> Committing to repo to catch up
 ﻿using CzechLearning.Controllers;
 using CzechLearning.Models;
 using System;
@@ -76,6 +79,7 @@ namespace CzechLearning
                 return new WordController(new CzechLearningContext ());
             }
             */
+<<<<<<< HEAD
 
             if (serviceType.Equals (typeof (IControllerActivator)))
             {
@@ -126,11 +130,18 @@ namespace CzechLearning
             }
             */
 
+=======
+            /*
+>>>>>>> Committing to repo to catch up
             if (serviceType.Equals (typeof (IControllerActivator)))
             {
                 return new CzechControllerActivator ();
             }
+<<<<<<< HEAD
 
+=======
+            */
+>>>>>>> Committing to repo to catch up
             return null;
             
         }
@@ -147,6 +158,9 @@ namespace CzechLearning
         }
 
     }
+<<<<<<< HEAD
 >>>>>>> 7986f23947b753a85cf002f2b9590dd40d085722
 >>>>>>> 41b5c4a05187924f46d64c6bfc4c4bdcc545adc5
+=======
+>>>>>>> Committing to repo to catch up
 }
