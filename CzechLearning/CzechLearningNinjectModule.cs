@@ -16,7 +16,6 @@ namespace CzechLearning
         {
             Bind<IWordContext>().To<CzechLearningContext>();
             Bind<IWordRepository>().To<WordRepository>();
-
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using CzechLearning.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -51,7 +52,17 @@ namespace CzechLearning.Controllers
         [HttpPost]
         public ActionResult CheckWord(WordQuiz word)
         {
-            return PartialView ("SuccessPartial", ModelState.IsValid);
+            // TODO: automatic server-side validation is not working
+            // Fix, and then it should run just by using the following line
+            //return PartialView ("SuccessPartial", ModelState.IsValid);
+
+            // We perform manual validation instead
+            var context = new ValidationContext(word);
+            var validationResult = word.Validate(context);
+            var isValid = (validationResult.Count () == 0);
+            
+            return PartialView("SuccessPartial", isValid);
+            
         }
 
         /// <summary>

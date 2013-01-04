@@ -21,21 +21,16 @@ namespace CzechLearning.Models
             this.context = context;
         }
 
-        public DbSet GetAll()
-        {
-            return context.Words;
-        }
-        /*
-        public DbSet<Word> GetAll()
-        {
-            return context.Words;
-        }
-         * */
-
         public DbSet<Word> Words
         {
             get { return context.Words; }
             set { context.Words = value; }
+        }
+
+        // used to be public DbSet<Word>, but not necessary
+        public DbSet GetAll()
+        {
+            return context.Words;
         }
 
         public Word Find(int id)

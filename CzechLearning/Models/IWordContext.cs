@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CzechLearning.Models
 {
-    interface IWordContext
+    public interface IWordContext : IDisposable
     {
     }
 }
