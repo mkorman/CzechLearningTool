@@ -13,6 +13,7 @@ namespace CzechLearning.Controllers
     /// 
     /// If the translation is wrong, an error will be presented to the user
     /// </summary>
+    [Authorize]
     public class QuizController : Controller
     {
 

@@ -10,6 +10,7 @@ using System.Data.Entity.Infrastructure;
 
 namespace CzechLearning.Controllers
 {
+    [Authorize]
     public class WordController : Controller
     {
         private IWordRepository db;
@@ -28,6 +29,7 @@ namespace CzechLearning.Controllers
 
         //
         // GET: /Word/
+            [Authorize]
         public ActionResult Index()
         {
             return View(db.Words.OrderBy(Word => Word.English).ToList());

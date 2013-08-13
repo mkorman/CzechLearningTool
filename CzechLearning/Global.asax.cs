@@ -27,7 +27,7 @@ namespace CzechLearning
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
 
-            DependencyResolver.SetResolver(new CzechDependencyResolver());
+            //DependencyResolver.SetResolver(new CzechDependencyResolver());
         }
 
     }
