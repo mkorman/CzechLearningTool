@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Czech Learing Tool";
+    ViewBag.Title = "Czech Learning Tool";
 }
 @section featured {
     <section class="featured">
@@ -14,18 +14,17 @@
 <h3>We suggest the following:</h3>
 <ol class="round">
     <li class="one">
+        <h5>Create an account</h5>
+        @Html.ActionLink("Click here", "Account", "Register") to creat an account and access the dictionary and quiz features<br />
+        </li>
+
+    <li class="two">
         <h5>View dictionary</h5>
         You can view and edit English to Czech translations @Html.ActionLink("here", "Index", "Word")<br />
     </li>
 
-    <li class="two">
+    <li class="three">
         <h5>Test your knowledge</h5>
         You can be quizzed on words @Html.ActionLink("here", "Index", "Quiz")<br />
-    </li>
-
-    <li class="three">
-        <h5>Add NuGet packages and jump-start your coding</h5>
-        NuGet makes it easy to install and update free libraries and tools.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245153">Learn more…</a>
     </li>
 </ol>

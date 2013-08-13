@@ -174,21 +174,17 @@
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="CzechControllerActivator.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\QuizController.cs" />
     <Compile Include="Controllers\WordController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="CzechDependencyResolver.cs" />
-    <Compile Include="CzechLearningNinjectModule.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="HttpParamActionAttribute.cs" />
+    <Compile Include="BusinessLayer\HttpParamActionAttribute.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\IWordContext.cs" />
     <Compile Include="Models\IWordRepository.cs" />
@@ -196,7 +192,7 @@
     <Compile Include="Models\CzechLearningContext.cs" />
     <Compile Include="Models\Word.cs" />
     <Compile Include="Models\WordRepository.cs" />
-    <Compile Include="MultiButtonAttribute.cs" />
+    <Compile Include="BusinessLayer\MultiButtonAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -256,6 +252,8 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <None Include="Properties\PublishProfiles\clt - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\clt - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Images\check.png" />
     <Content Include="Images\error.png" />
