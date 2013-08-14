@@ -258,6 +258,7 @@
     <Content Include="Images\check.png" />
     <Content Include="Images\error.png" />
     <Content Include="Scripts\CharInput.js" />
+    <Content Include="Scripts\Quiz.js" />
     <Content Include="Scripts\jquery.hotkeys.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />

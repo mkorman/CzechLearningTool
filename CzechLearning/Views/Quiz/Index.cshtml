@@ -6,14 +6,12 @@
 }
 <h2>Word quiz</h2>
 
-
 @using (Ajax.BeginForm("CheckWord",
     Model,
     new AjaxOptions
     {
-        UpdateTargetId = "resultplaceholder",
-        InsertionMode = InsertionMode.Replace,
         HttpMethod = "POST",
+        OnSuccess = "updateIcon"
     }, new { autocomplete = "off" }))
 {
     @Html.ValidationSummary(true)
@@ -40,7 +38,8 @@
         <div class="editor-field">
             @Html.EditorFor(model => model.userTranslation)
             @Html.ValidationMessageFor(model => model.userTranslation)
-            <span id="resultplaceholder"></span>
+            <span id="successIcon" class="resultIcon"><img src="~/Images/check.png" alt="Success!" /></span>
+            <span id="errorIcon" class="resultIcon"><img src="~/Images/error.png" alt="Error" /></span>
         </div>
         @{
             var dict = new ViewDataDictionary();
@@ -62,43 +61,30 @@
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-<script>
-    // Bind space to 'next' action
-    $(document).bind('keydown', 'space', getNext);
-    // Bind 'h' to 'gethint' action
-    $(document).bind('keydown', 'h', getHint);
-    // Clear user error icon on user keypress
-    $(function () {
-        $('#userTranslation').keydown(function () {
-            $('#resultplaceholder').empty();
-        })
-    });
-
-    function getNext(evt) {
-        evt.preventDefault();
-        // We reload the page, knowing that we'll get a new word
-        location.reload();
-        return false;
-    }
-    
+<script type="text/javascript" src="~/Scripts/Quiz.js"></script>
+<script type="text/javascript">
     // AJAX for Hint
-    function getHint (event) {
+    function getHint(event) {
         event.preventDefault();
         // Get the form
         var form = $('form');
 
         // Call hint and update form
         $.getJSON("@Url.Action("Hint")", form.serialize(), function (data) {
-                
-                // Update relevant form fields
-                $("#userTranslation").val(data.userTranslation);
-                $("#hintLevel").val(data.hintLevel);
-            });
-        }
+
+        // Update relevant form fields
+        $("#userTranslation").val(data.userTranslation);
+        $("#hintLevel").val(data.hintLevel);
+        });
+    }
 
     // Hook the btnHint get JSON data for Hint
     $(function () {
         $('#btnHint').click(getHint);
-    })
+    });
+
+    // Bind 'h' to 'gethint' action
+    $(document).bind('keydown', 'h', getHint);
+
 </script>
 }

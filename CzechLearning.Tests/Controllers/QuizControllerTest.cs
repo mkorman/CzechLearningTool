@@ -60,7 +60,7 @@ namespace CzechLearning.Tests.Controllers
             word.Czech = "Den";
 
             // Act
-            var result = controller.CheckWord(word) as PartialViewResult;
+            var result = controller.CheckWord(word) as JsonResult;
 
             // Assert
             Assert.IsNotNull(result, "Expected a non-null PartialViewResult");

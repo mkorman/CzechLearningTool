@@ -51,10 +51,10 @@ namespace CzechLearning.Controllers
         /// <param name="word">The word to quiz</param>
         /// <returns>A partial view to represent success or failure</returns>
         [HttpPost]
-        public ActionResult CheckWord(WordQuiz word)
+        public JsonResult CheckWord(WordQuiz word)
         {
             // Use validation to check whether the user's guess was successful or not
-            return PartialView ("SuccessPartial", ModelState.IsValid);
+            return Json (ModelState.IsValid);
         }
 
         /// <summary>
