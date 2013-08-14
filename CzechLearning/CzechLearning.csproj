@@ -321,7 +321,6 @@
     <Content Include="Views\Shared\CzechKeys.cshtml" />
     <Content Include="Views\Quiz\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\WordQuiz.cshtml" />
-    <Content Include="Views\Shared\SuccessPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
