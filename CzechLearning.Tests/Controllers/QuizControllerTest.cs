@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CzechLearning.Controllers;
 using CzechLearning.Models;
 using System.Web.Mvc;
+using Newtonsoft.Json;
 
 namespace CzechLearning.Tests.Controllers
 {
@@ -60,10 +61,11 @@ namespace CzechLearning.Tests.Controllers
             word.Czech = "Den";
 
             // Act
-            var result = controller.CheckWord(word) as JsonResult;
+            var jsonResult = controller.CheckWord(word) as JsonResult;
 
             // Assert
-            Assert.IsNotNull(result, "Expected a non-null PartialViewResult");
+            Assert.IsNotNull(jsonResult, "Expected a non-null PartialViewResult");
+            Assert.IsInstanceOfType(jsonResult.Data, typeof (bool), "Expected a bool result");
         }
     }
 }
