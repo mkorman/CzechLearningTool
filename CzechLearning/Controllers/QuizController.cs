@@ -48,22 +48,13 @@ namespace CzechLearning.Controllers
         /// <summary>
         /// Returns a partial view which represents whether the word validated OK or not
         /// </summary>
-        /// <param name="word"></param>
-        /// <returns></returns>
+        /// <param name="word">The word to quiz</param>
+        /// <returns>A partial view to represent success or failure</returns>
         [HttpPost]
         public ActionResult CheckWord(WordQuiz word)
         {
-            // TODO: automatic server-side validation is not working
-            // Fix, and then it should run just by using the following line
-            //return PartialView ("SuccessPartial", ModelState.IsValid);
-
-            // We perform manual validation instead
-            var context = new ValidationContext(word);
-            var validationResult = word.Validate(context);
-            var isValid = (validationResult.Count () == 0);
-            
-            return PartialView("SuccessPartial", isValid);
-            
+            // Use validation to check whether the user's guess was successful or not
+            return PartialView ("SuccessPartial", ModelState.IsValid);
         }
 
         /// <summary>
