@@ -321,6 +321,9 @@
     <Content Include="Views\Shared\CzechKeys.cshtml" />
     <Content Include="Views\Quiz\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\WordQuiz.cshtml" />
+    <None Include="Web.clt - Web Deploy.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
