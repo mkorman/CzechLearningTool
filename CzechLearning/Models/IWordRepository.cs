@@ -15,7 +15,7 @@ namespace CzechLearning.Models
     public interface IWordRepository : IDisposable
     {
         // Get a set of words from the database
-        DbSet<Word> Words { get; set; }
+        IDbSet<Word> Words { get; set; }
         
         Word Find(int id);
 
@@ -23,8 +23,8 @@ namespace CzechLearning.Models
 
         Word Edit(Word word);
 
-        DbSet Remove(Word word);
+        IDbSet<Word> Remove(Word word);
 
-        DbSet Remove(int id);
+        IDbSet<Word> Remove(int id);
     }
 }

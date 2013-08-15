@@ -4,18 +4,19 @@ using CzechLearning.Controllers;
 using CzechLearning.Models;
 using System.Web.Mvc;
 using Newtonsoft.Json;
+using CzechLearning.Tests.Mocks;
 
 namespace CzechLearning.Tests.Controllers
 {
     [TestClass]
     public class QuizControllerTest
     {
+        QuizController controller;
+
         [TestMethod]
         public void Controller_Quiz_Index()
         {
             // Arrange
-            var controller = new QuizController();
-
             // Act
             var result = controller.Index() as ViewResult;
 
@@ -27,7 +28,6 @@ namespace CzechLearning.Tests.Controllers
 
             Assert.IsNotNull (word, "Quiz Controller index did not return a non-null WordQuiz");
             Assert.IsTrue(word.hintLevel == 0, "Hint level is not zero");
-
         }
 
         [TestMethod]
@@ -46,9 +46,9 @@ namespace CzechLearning.Tests.Controllers
             Assert.IsNotNull(word, "Expected a non-null JsonResult");
             var Data = result.Data as WordQuiz;
             Assert.IsNotNull(word, "Expected a non-null WordQuiz instance");
-            Assert.IsTrue(word.English == Data.English, "English field modified after a Hint () request");
-            Assert.IsTrue(word.Czech == Data.Czech, "Czech field modified after a Hint () request");
-            Assert.IsTrue(Data.hintLevel == 1, "Hint level field not increased by 1 after a Hint () request");
+            Assert.AreEqual(word.English, Data.English, "English field modified after a Hint () request");
+            Assert.AreEqual(word.Czech, Data.Czech, "Czech field modified after a Hint () request");
+            Assert.AreEqual(Data.hintLevel, 1, "Hint level field not increased by 1 after a Hint () request");
         }
 
         [TestMethod]
@@ -66,6 +66,14 @@ namespace CzechLearning.Tests.Controllers
             // Assert
             Assert.IsNotNull(jsonResult, "Expected a non-null PartialViewResult");
             Assert.IsInstanceOfType(jsonResult.Data, typeof (bool), "Expected a bool result");
+        }
+
+        [TestInitialize]
+        public void Initialize ()
+        {
+            var mockRepo = new MockWordRepository();
+            mockRepo.Create(new Word() { English = "Day", Czech = "Den" });
+            controller = new QuizController(mockRepo.Words);
         }
     }
 }

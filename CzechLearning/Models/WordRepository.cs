@@ -21,14 +21,14 @@ namespace CzechLearning.Models
             this.context = context;
         }
 
-        public DbSet<Word> Words
+        public IDbSet<Word> Words
         {
             get { return context.Words; }
             set { context.Words = value; }
         }
 
         // used to be public DbSet<Word>, but not necessary
-        public DbSet GetAll()
+        public IDbSet<Word> GetAll()
         {
             return context.Words;
         }
@@ -52,13 +52,13 @@ namespace CzechLearning.Models
             return word;
         }
 
-        public DbSet Remove(int id)
+        public IDbSet<Word> Remove(int id)
         {
             Word word = context.Words.Find(id);
             return Remove(word);
         }
 
-        public DbSet Remove(Word word)
+        public IDbSet<Word> Remove(Word word)
         {
             context.Words.Remove(word);
             context.SaveChanges();

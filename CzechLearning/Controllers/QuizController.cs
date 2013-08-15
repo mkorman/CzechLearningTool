@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,8 +17,29 @@ namespace CzechLearning.Controllers
     [Authorize]
     public class QuizController : Controller
     {
+        /// <summary>
+        /// Gets or sets the Words to quiz on.
+        /// </summary>
+        public IEnumerable<Word> Words { get; private set; }
 
-        private CzechLearningContext db = new CzechLearningContext();
+        /// <summary>
+        /// Default constructor.
+        /// Populates word from a CzechLearningContext
+        /// </summary>
+        public QuizController ()
+        {
+            var db = new CzechLearningContext();
+            Words = db.Words;
+        }
+
+        /// <summary>
+        /// Parameterised constructor. Allows user to inject his own words db set
+        /// </summary>
+        /// <param name="words">The dbset to use</param>
+        public QuizController (IEnumerable <Word> words)
+        {
+            Words = words;
+        }
 
         //
         // Presents a word at random and allows the user to test it
@@ -28,7 +50,7 @@ namespace CzechLearning.Controllers
         {
             
             // our DB query
-            var query = from word in db.Words
+            var query = from word in Words
                         orderby word.WordId
                         select word;
 
@@ -46,7 +68,7 @@ namespace CzechLearning.Controllers
         }
 
         /// <summary>
-        /// Returns a partial view which represents whether the word validated OK or not
+        /// Returns a Json-wrapped bool that indicates whether the word validated OK or not
         /// </summary>
         /// <param name="word">The word to quiz</param>
         /// <returns>A partial view to represent success or failure</returns>
@@ -62,7 +84,7 @@ namespace CzechLearning.Controllers
         /// </summary>
         /// <param name="userWord"></param>
         /// <returns></returns>
-        public ActionResult Hint(WordQuiz userWord)
+        public JsonResult Hint(WordQuiz userWord)
         {
             // Apply the hint for the word
             userWord.Hint();

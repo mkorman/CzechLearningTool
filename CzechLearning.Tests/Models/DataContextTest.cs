@@ -15,7 +15,6 @@ namespace CzechLearning.Tests.Models
             // Arrange
             var myDataContext = new CzechLearningContext();
 
-
             // Act
             var words = myDataContext.Words;
             var word = words.ToList()[0];

@@ -18,7 +18,7 @@ namespace CzechLearning.Models
         {
         }
 
-        public DbSet<Word> Words { get; set; }
+        public IDbSet<Word> Words { get; set; }
 
     }
 }

@@ -115,7 +115,10 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="Controllers\QuizControllerTest.cs" />
     <Compile Include="Controllers\WordControllerTest.cs" />
+    <Compile Include="Mocks\InMemoryDbSet.cs" />
+    <Compile Include="Mocks\MockWordRepository.cs" />
     <Compile Include="Models\DataContextTest.cs" />
+    <Compile Include="Models\MockWordRepositoryTests.cs" />
     <Compile Include="Models\WordQuizTest.cs" />
     <Compile Include="Models\WordTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
