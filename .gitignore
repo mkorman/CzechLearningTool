@@ -34,7 +34,7 @@
 
 # Pulish information
 *.pubxml
-.Azure.config
+*.Azure.config
 
 ## TODO: If you have NuGet Package Restore enabled, uncomment this
 #packages/
