@@ -49,6 +49,9 @@
     <Reference Include="Ninject.Web.Mvc">
       <HintPath>..\packages\Ninject.MVC3.3.0.0.6\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="Recaptcha.Web">
+      <HintPath>..\packages\RecaptchaNet.1.2\lib\net45\Recaptcha.Web.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -253,10 +256,11 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="Properties\PublishProfiles\clt - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\clt - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\Azure.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Images\check.png" />
     <Content Include="Images\error.png" />
+    <Content Include="RecaptchaNet.ReadMe.txt" />
     <Content Include="Scripts\CharInput.js" />
     <Content Include="Scripts\Quiz.js" />
     <Content Include="Scripts\jquery.hotkeys.js" />
@@ -274,7 +278,9 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -321,7 +327,7 @@
     <Content Include="Views\Shared\CzechKeys.cshtml" />
     <Content Include="Views\Quiz\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\WordQuiz.cshtml" />
-    <None Include="Web.clt - Web Deploy.config">
+    <None Include="Web.Azure.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>

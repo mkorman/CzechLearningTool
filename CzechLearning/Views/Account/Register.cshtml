@@ -1,4 +1,5 @@
 ﻿@model CzechLearning.Models.RegisterModel
+@using Recaptcha.Web.Mvc
 @{
     ViewBag.Title = "Register";
 }
@@ -28,6 +29,7 @@
                 @Html.PasswordFor(m => m.ConfirmPassword)
             </li>
         </ol>
+        @Html.Recaptcha(theme: Recaptcha.Web.RecaptchaTheme.Clean)
         <input type="submit" value="Register" />
     </fieldset>
 }

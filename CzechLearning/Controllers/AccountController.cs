@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Transactions;
 using System.Web;
-//using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Security;
 using DotNetOpenAuth.AspNet;
@@ -11,6 +10,8 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using CzechLearning.Filters;
 using CzechLearning.Models;
+using Recaptcha.Web;
+using Recaptcha.Web.Mvc;
 
 namespace CzechLearning.Controllers
 {
@@ -75,8 +76,26 @@ namespace CzechLearning.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register(RegisterModel model)
         {
+            var recaptchaHelper = this.GetRecaptchaVerificationHelper();
+            if (string.IsNullOrEmpty(recaptchaHelper.Response))
+            {
+                ModelState.AddModelError("", "Captcha answer cannot be empty.");
+                return View(model);
+            }
+
+            RecaptchaVerificationResult recaptchaResult = recaptchaHelper.VerifyRecaptchaResponse();
+
+            if (recaptchaResult != RecaptchaVerificationResult.Success)
+            {
+                ModelState.AddModelError("", "Incorrect captcha answer.");
+            }
+
+
             if (ModelState.IsValid)
             {
+                
+
+
                 // Attempt to register the user
                 try
                 {
