@@ -29,7 +29,7 @@ namespace CzechLearning.Controllers
 
         //
         // GET: /Word/
-            [Authorize]
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.Words.OrderBy(Word => Word.English).ToList());
@@ -37,7 +37,7 @@ namespace CzechLearning.Controllers
 
         //
         // GET: /Word/Details/5
-
+        [Authorize]
         public ActionResult Details(int id = 0)
         {
             Word word = db.Find(id);
@@ -50,7 +50,7 @@ namespace CzechLearning.Controllers
 
         //
         // GET: /Word/Create
-
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -58,7 +58,7 @@ namespace CzechLearning.Controllers
 
         //
         // POST: /Word/Create
-
+        [Authorize]
         [HttpPost]
         [MultiButton(MatchFormKey = "Action", MatchFormValue = "Create")] 
         public ActionResult Create(Word word)
@@ -74,7 +74,7 @@ namespace CzechLearning.Controllers
 
         //
         // POST: /Word/CreateMore
-
+        [Authorize]
         [HttpPost]
         [MultiButton(MatchFormKey = "Action", MatchFormValue = "Create More")] 
         public ActionResult CreateMore(Word word)
@@ -91,7 +91,7 @@ namespace CzechLearning.Controllers
 
         //
         // GET: /Word/Edit/5
-
+        [Authorize]
         public ActionResult Edit(int id = 0)
         {
             Word word = db.Find(id);
@@ -104,7 +104,7 @@ namespace CzechLearning.Controllers
 
         //
         // POST: /Word/Edit/5
-
+        [Authorize]
         [HttpPost]
         public ActionResult Edit(Word word)
         {
@@ -118,7 +118,7 @@ namespace CzechLearning.Controllers
 
         //
         // GET: /Word/Delete/5
-
+        [Authorize]
         public ActionResult Delete(int id = 0)
         {
             Word word = db.Find(id);
@@ -131,7 +131,7 @@ namespace CzechLearning.Controllers
 
         //
         // POST: /Word/Delete/5
-
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {

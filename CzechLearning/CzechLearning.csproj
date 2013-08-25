@@ -49,6 +49,10 @@
     <Reference Include="Ninject.Web.Mvc">
       <HintPath>..\packages\Ninject.MVC3.3.0.0.6\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="NUnit.VisualStudio.TestAdapter">
+      <HintPath>..\packages\NUnitTestAdapter.0.96.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Recaptcha.Web">
       <HintPath>..\packages\RecaptchaNet.1.2\lib\net45\Recaptcha.Web.dll</HintPath>
     </Reference>
@@ -189,8 +193,10 @@
     </Compile>
     <Compile Include="BusinessLayer\HttpParamActionAttribute.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\IRandomWordProvider.cs" />
     <Compile Include="Models\IWordContext.cs" />
     <Compile Include="Models\IWordRepository.cs" />
+    <Compile Include="Models\WordnikRandomWordProvider.cs" />
     <Compile Include="Models\WordQuiz.cs" />
     <Compile Include="Models\CzechLearningContext.cs" />
     <Compile Include="Models\Word.cs" />
