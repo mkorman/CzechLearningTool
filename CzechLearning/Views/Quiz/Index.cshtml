@@ -48,8 +48,8 @@
         @Html.Partial("CzechKeys",dict)
         <p>
             <input type="submit" name="CheckWord" value="Test"/>
-            <button id="btnHint">Hint</button>
-            <button onclick ="location.href='@Url.Action("Index")'">Next >></button>
+            <input type="button" id="btnHint" value="Hint" />
+            <input type="button" onclick ="location.href='@Url.Action("Index")'" value="Next >>"/>
         </p>
     </fieldset>
 }
