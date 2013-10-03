@@ -17,7 +17,7 @@ namespace CzechLearning.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your app description page.";
+            ViewBag.Message = string.Empty;
 
             return View();
         }
