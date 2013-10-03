@@ -38,6 +38,10 @@ namespace CzechLearning
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+
+            // Not ready to deploy this yet, as this needs a full revision of the website's styles
+            //bundles.Add(new StyleBundle("~/Content/topcoat/css").Include(
+            //    "~/Content/topcoat/topcoat-desktop-light.css"));
         }
     }
 }
